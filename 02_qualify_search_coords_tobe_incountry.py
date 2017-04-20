@@ -13,7 +13,7 @@ country_code = sys.argv[2]
 
 # google API reference doc https://github.com/googlemaps/google-maps-services-python
 #
-gmaps = googlemaps.Client(key='........your key here ...')
+gmaps = googlemaps.Client(key=' your key here ')
 
 wb = openpyxl.load_workbook(coord_data_file)
 sheet = wb.get_sheet_by_name('srch_coords')
