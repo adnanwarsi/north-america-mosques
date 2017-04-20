@@ -27,9 +27,7 @@ except OSError:
 
 # google API reference doc https://github.com/googlemaps/google-maps-services-python
 #
-gmaps = googlemaps.Client(key='AIzaSyC02kAGSXn6IIOw0kvgITAYdoOdEF1noK0')
-# old key AIzaSyCyJFr8K4_tNRx0ATeNOh6gDd02VCToVxA should work only for 1000 free queries in 24 hrs
-# new key AIzaSyC02kAGSXn6IIOw0kvgITAYdoOdEF1noK0 should work for 15000 free queries in 24 hrs
+gmaps = googlemaps.Client(key='your key here')
 
 wb = openpyxl.load_workbook(coord_data_file)
 sheet = wb.get_sheet_by_name('coords')
