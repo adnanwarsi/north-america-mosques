@@ -22,7 +22,6 @@ def geo_reverse_print(lat, lon):
 # from datetime import datetime
 #
 # gmaps = googlemaps.Client(key='Add Your Key here')
-#  oh, btw, my key =    AIzaSyC02kAGSXn6IIOw0kvgITAYdoOdEF1noK0
 #
 # # Geocoding an address
 # geocode_result = gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
