@@ -1,7 +1,10 @@
 # north-america-mosques
+
+##### the results of the scripts are at run in March 2017
+https://fusiontables.google.com/DataSource?docid=1_e6DLtDSOWnK-m66cf21BTQS2zOuZ3EJPd6HmvtH#map:id=3
+
 ### The following sequence of scripts
-are to be run in sequence with the packages -
-geopy, googlemaps, io, json, math, openpyxl, os, re, requests, sys, time, xlwt
+with installed packages - geopy, googlemaps, io, json, math, openpyxl, os, re, requests, sys, time, xlwt
 
 #### 01_generate_search_coords.py
 Generate the radial search coordinates.  The coordinates are placed across such that radial search circles
