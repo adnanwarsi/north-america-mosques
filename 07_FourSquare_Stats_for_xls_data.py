@@ -22,8 +22,8 @@ sheet.cell(row=1, column=17).value = 'FSQ Name' # column Q
 sheet.cell(row=1, column=18).value = 'FSQ Users Count' # column R
 
 # Foursquare parameters
-client_id = '2FSOIJFEHCLIHYB25WRI20YHSPEYJ2HMLMR5AUSSE4AO5MGF'
-secret_id = 'MDSKWDSSIHSLIWBYRF2L5RDZEEYJYWWRWAZ5ZJQLPSETZRVW'
+client_id = 'your id here'
+secret_id = 'your secret here'
 
 
 for rowNum in range(2, sheet.max_row):  # skip the first row
