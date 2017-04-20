@@ -1,6 +1,7 @@
 # north-america-mosques
+This is a set of python scripts to exctract mosques data from Google Places API run over the North American region. 
 
-##### the results of the scripts are at run in March 2017
+##### Results of the scripts run in March 2017
 https://fusiontables.google.com/DataSource?docid=1_e6DLtDSOWnK-m66cf21BTQS2zOuZ3EJPd6HmvtH#map:id=3
 
 ### The following sequence of scripts
