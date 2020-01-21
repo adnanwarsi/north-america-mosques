@@ -2,10 +2,7 @@
 This is a set of python scripts to exctract mosques data from Google Places API run over the North American region. 
 
 ##### Results of the scripts run in March 2017
-https://fusiontables.google.com/DataSource?docid=1_e6DLtDSOWnK-m66cf21BTQS2zOuZ3EJPd6HmvtH#map:id=3
-
-also at 
-https://adnanwarsi.carto.com/builder/716de5cd-c043-48f5-92a5-3c107afa1754/embed?state=%7B%22map%22%3A%7B%22ne%22%3A%5B1.6696855009865839%2C-129.90234375000003%5D%2C%22sw%22%3A%5B60.28340847828245%2C-41.30859375000001%5D%2C%22center%22%3A%5B36.1733569352216%2C-85.56152343750001%5D%2C%22zoom%22%3A4%7D%2C%22widgets%22%3A%7B%2251d7e6c7-042e-4f3c-97e7-e0b3099092ab%22%3A%7B%22autoStyle%22%3Atrue%7D%7D%7D
+https://public.tableau.com/profile/adnan.warsi#!/vizhome/NorthAmericaMuslimCenters/Sheet1
 
 ### The following sequence of scripts
 with installed packages - geopy, googlemaps, io, json, math, openpyxl, os, re, requests, sys, time, xlwt
