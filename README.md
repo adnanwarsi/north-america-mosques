@@ -7,6 +7,10 @@ https://public.tableau.com/profile/adnan.warsi#!/vizhome/NorthAmericaMuslimCente
 ### The following sequence of scripts
 with installed packages - geopy, googlemaps, io, json, math, openpyxl, os, re, requests, sys, time, xlwt
 
+use the following to setup with packages dependencies
+
+**$pip install -r requirements.txt**
+
 #### 01_generate_search_coords.py
 Generate the radial search coordinates.  The coordinates are placed across such that radial search circles
 will form a honeycomb lattice.  The maximum distance across the coordinates is sqrt(3)*R, so that circles

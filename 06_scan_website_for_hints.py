@@ -7,10 +7,17 @@ import openpyxl
 
 
 if len(sys.argv) < 2:
-    print ('\n\nusage1: \n\n>>>python ' + sys.argv[0] + '  {excel file} \n\n')
+    print ('\n\nusage1: \n\n>>>python ' + sys.argv[0] + '  {excel file}  {optional parameter to skip lines and start from } \n\n')
     exit()
 
+
 excel_db_file = sys.argv[1]
+
+
+# default
+startRow = 2
+if len(sys.argv) ==3:
+    startRow = int(sys.argv[2])
 
 wb = openpyxl.load_workbook(excel_db_file)
 sheet = wb.get_sheet_by_name('muslim centers')
@@ -23,41 +30,46 @@ headers = {
 
 
 
-for rowNum in range(2, sheet.max_row):  # skip the first row
+for rowNum in range(startRow, sheet.max_row):  # skip the first row
     if sheet.cell(row=rowNum, column=16).value == 'Sunni':
         url = sheet.cell(row=rowNum, column=9).value
         # print url
         if url:
-            print str("%d>>>>    will scan the website %s" % (rowNum, url))
+            print (str("%d>>>>    will scan the website %s" % (rowNum, url)))
             try:
                 r = requests.get(url, headers=headers)
                 page = r.text
                 bsObj = BeautifulSoup(page, "html.parser")
 
                 if bsObj(text=re.compile('ahmadiyya', re.I)):
-                    print 'ahmadiyya msoque found'
+                    print ('ahmadiyya msoque found')
                     #sheet.write(rowNum, 16, "Ahmadiyya")
                     sheet.cell(row=rowNum, column=16).value = 'Ahmadiyya'
+                    wb.save(excel_db_file)
 
                 elif bsObj(text=re.compile('ismaili', re.I)):
-                    print 'Ismaili msoque found'
+                    print ('Ismaili msoque found')
                     #sheet.write(rowNum, 16, "Ismaili")
                     sheet.cell(row=rowNum, column=16).value = 'Ismaili'
+                    wb.save(excel_db_file)
 
                 elif bsObj(text=re.compile('shia |imam ali|bohra |hussain |husain |jafari ', re.I)):
-                    print 'shia msoque found'
+                    print ('shia msoque found')
                     #sheet.write(rowNum, 16, "Shia")
                     sheet.cell(row=rowNum, column=16).value = 'Shia'
+                    wb.save(excel_db_file)
 
                 elif bsObj(text=re.compile('nation of islam', re.I)):
-                    print 'Nation Of Islam msoque found'
+                    print ('Nation Of Islam msoque found')
                     #sheet.write(rowNum, 16, "Nation Of Islam")
                     sheet.cell(row=rowNum, column=16).value = 'Nation Of Islam'
+                    wb.save(excel_db_file)
 
                 elif bsObj(text=re.compile('sufi ', re.I)):
-                    print 'Sufi msoque found'
+                    print ('Sufi msoque found')
                     #sheet.write(rowNum, 16, "Sufi")
                     sheet.cell(row=rowNum, column=16).value = 'Sufi'
+                    wb.save(excel_db_file)
 
             except Exception as e:
                 print (e)

@@ -54,10 +54,25 @@ with open(data_file) as json_data:
     sheet.write(0, 13, 'City')
     sheet.write(0, 14, 'Types')
     sheet.write(0, 15, 'Sect')
+    sheet.write(0, 16, 'num_of_ratings')
+    sheet.write(0, 17, 'num_of_reviews')
 
     row = 1
-    for placeItemData in place_coord_file_data.itervalues():
+    # for placeItemData in place_coord_file_data.itervalues():
+    print ("number of items retrieved is %d " % (len(place_coord_file_data.keys())))
+    for placeItemData in place_coord_file_data.values():
+        data = json.dumps(placeItemData, indent=4, ensure_ascii=False)
+        #print(len(placeItemData))
+        #print (data)
+
         placeInfo = placeItemData['result']
+        # print(json.dumps(placeInfo, indent=4, ensure_ascii=False))
+        # exit(0)
+
+        if 'permanently_closed' in placeInfo:
+            if placeInfo['permanently_closed'] == 'true':
+                continue
+
         sheet.write(row, 0, placeInfo['place_id'])
         sheet.write(row, 1, placeInfo['geometry']['location']['lat'])
         sheet.write(row, 2, placeInfo['geometry']['location']['lng'])
@@ -86,6 +101,7 @@ with open(data_file) as json_data:
                 sheet.write(row, 13, elems['long_name'])
 
         sheet.write(row, 14, ', '.join(placeInfo['types']) )
+
 
         # filters for sects
 
@@ -118,6 +134,16 @@ with open(data_file) as json_data:
 
         else:
             sheet.write(row, 15, "Sunni") # default to Sunni
+
+
+        # proxies to assess the foot traffic by user reviews
+        if 'user_ratings_total' in placeInfo:
+            sheet.write(row, 16, placeInfo['user_ratings_total'])
+
+        if 'reviews' in placeInfo:
+            sheet.write(row, 17, len(placeInfo['reviews']))
+
+
 
         row += 1
 

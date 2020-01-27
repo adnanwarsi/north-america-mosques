@@ -10,15 +10,16 @@ if len(sys.argv) < 2:
 
 places_search_dir_path = sys.argv[1]
 if not os.path.isdir(places_search_dir_path):
-    print places_search_dir_path + ' is not a directory'
+    print (str('%s is not a directory' % places_search_dir_path))
+
 
 composite_data_file_name = 'composite_data_file.json'
 dict = {}
 
 for filename in os.listdir(places_search_dir_path):
     if filename.endswith(".json"):
-        print filename
-        with open(str(places_search_dir_path) + str(filename)) as json_data:
+        print (filename)
+        with open(str(places_search_dir_path) + "/" + str(filename)) as json_data:
             place_coord_file_data = json.load(json_data)
             # print json.dumps(coord_places_data, indent=2)
             for key in place_coord_file_data:
@@ -27,5 +28,6 @@ for filename in os.listdir(places_search_dir_path):
 # write the data into a json file
 with io.open(composite_data_file_name, 'w', encoding='utf8') as json_file:
     data = json.dumps(dict, indent=4, ensure_ascii=False)
-    json_file.write(unicode(data))
+    # json_file.write(unicode(data))
+    json_file.write(data)
 
