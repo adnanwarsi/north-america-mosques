@@ -49,7 +49,7 @@ simplejson==3.8.2
 six==1.11.0
 stevedore==1.17.1
 uritemplate==3.0.0
-urllib3==1.23
+urllib3==1.24.2
 virtualenv==15.0.3
 virtualenv-clone==0.2.6
 virtualenvwrapper==4.7.2
