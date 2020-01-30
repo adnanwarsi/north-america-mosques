@@ -2,7 +2,7 @@
 This is a set of python scripts to exctract mosques data from Google Places API run over the North American region. 
 
 ##### Results of the scripts run in March 2017
-https://public.tableau.com/profile/adnan.warsi#!/vizhome/NorthAmericaMuslimCenters/Sheet1
+https://public.tableau.com/profile/adnan.warsi#!/vizhome/UnitedStatesMosques-asofJan2020/Sheet1
 
 ### The following sequence of scripts
 with installed packages - geopy, googlemaps, io, json, math, openpyxl, os, re, requests, sys, time, xlwt
